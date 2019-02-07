@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">XOXO</string>
+    <string name="chez_text">CHEZ</string>
+    <string name="code"><![CDATA[</Code>]]></string>
+    <string name="play">Play</string>
+    <string name="xoxo_logo">xoxo_logo</string>
+    <string name="tic_tac_toe">tic tac toe</string>
+    <string name="winner_message">Winner Message</string>
+    <string name="home">home</string>
+    <string name="play_again">play again</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="player_2_image">player 2 image</string>
+    <string name="player_1_image">player 1 image</string>
+    <string name="_0_0">0,0</string>
+    <string name="_0_1">0,1</string>
+    <string name="_0_2">0,2</string>
+    <string name="_1_0">1,0</string>
+    <string name="_2_2">2,2</string>
+    <string name="_2_1">2,1</string>
+    <string name="_2_0">2,0</string>
+    <string name="_1_2">1,2</string>
+    <string name="_1_1">1,1</string>
+</resources>

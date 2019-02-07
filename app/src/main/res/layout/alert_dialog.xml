@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:layout_gravity="center"
+    android:layout_marginLeft="55dp"
+    android:layout_marginRight="55dp"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="#03A9F4"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="15dp">
+
+            <TextView
+                android:id="@+id/winnerMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="@string/winner_message"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/frmNo"
+        android:layout_marginEnd="45dp"
+        android:layout_marginTop="75dp">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@android:color/transparent"
+            app:backgroundTint="@color/colorPrimaryDark" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/home"
+            android:elevation="6dp"
+            app:srcCompat="@mipmap/ic_home" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frmOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="75dp"
+        android:accessibilityHeading="true">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@android:color/transparent"
+            app:backgroundTint="#F81C1C" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/play_again"
+            android:elevation="6dp"
+            app:srcCompat="@mipmap/ic_replay" />
+
+    </FrameLayout>
+</FrameLayout>
