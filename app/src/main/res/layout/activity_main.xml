@@ -12,8 +12,7 @@
         android:id="@+id/title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="8dp"
         android:contentDescription="@string/xoxo_logo"
         app:layout_constraintBottom_toTopOf="@+id/titleImage"
         app:layout_constraintDimensionRatio="w,16:9"
@@ -28,7 +27,6 @@
         android:layout_height="0dp"
         android:layout_marginStart="54dp"
         android:layout_marginEnd="54dp"
-        android:layout_marginBottom="50dp"
         android:contentDescription="@string/tic_tac_toe"
         app:layout_constraintBottom_toTopOf="@+id/play"
         app:layout_constraintDimensionRatio="1:1"
@@ -39,11 +37,11 @@
 
     <Button
         android:id="@+id/play"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="111dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/custom_button"
         android:drawableStart="@mipmap/ic_play"
         android:onClick="startGame"
@@ -55,33 +53,22 @@
         android:textColor="#DB0000"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/mainActivityAd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleImage" />
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/mainActivityAd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3"
         ads:adSize="BANNER"
         ads:adUnitId="ca-app-pub-5397309444919460/2621336244"
-        />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="637dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
