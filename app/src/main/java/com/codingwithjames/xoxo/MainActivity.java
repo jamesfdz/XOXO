@@ -8,11 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class MainActivity extends AppCompatActivity {
 
     ConstraintLayout mMainLayout;
     Button mPlay;
-
+    AdView mMainPageAd;
     ImageView mTitle, mTitleImage;
 
     @Override
@@ -31,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
         mTitle.animate().translationYBy(-1000f).setDuration(2000);
         mTitleImage.animate().translationYBy(-1000f).setDuration(2000);
         mPlay.animate().translationYBy(-1000f).setDuration(2000);
+
+        mMainPageAd = findViewById(R.id.mainActivityAd);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("CCFA8FF0F89AD93CC8A593BAE17AF056")
+                .build();
+        mMainPageAd.loadAd(adRequest);
 
     }
 

@@ -7,6 +7,7 @@ import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+import com.google.android.gms.ads.MobileAds;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -19,6 +20,8 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+
+        MobileAds.initialize(this, "ca-app-pub-5397309444919460~5083848058");
 
         mSplashScreenBaseLayout = findViewById(R.id.splashScreenBaseLayout);
         mSplashScreenBaseLayout.setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION

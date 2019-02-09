@@ -13,6 +13,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class GamePage extends AppCompatActivity {
 
     int activePlayer = 0; //0 = O and 1 is X
@@ -23,11 +26,18 @@ public class GamePage extends AppCompatActivity {
     String winner;
     ConstraintLayout mBaseLayout;
     ImageView mX, mO;
+    AdView mGamePageAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_play);
+
+        mGamePageAd = findViewById(R.id.gamePageAd);
+        AdRequest request = new AdRequest.Builder()
+                .addTestDevice("CCFA8FF0F89AD93CC8A593BAE17AF056")
+                .build();
+        mGamePageAd.loadAd(request);
 
         mBaseLayout = findViewById(R.id.baseLayout);
         mX = findViewById(R.id.x_image);
@@ -41,20 +51,22 @@ public class GamePage extends AppCompatActivity {
 
         if(gameState[tappedCounter] == 2 && gameIsActive){ //player has not tapped if it is equal
             gameState[tappedCounter] = activePlayer;
-            counter.setTranslationY(-1000f);
+//            counter.setTranslationY(-1000f);
 
             if(activePlayer == 0){
                 counter.setImageResource(R.drawable.o);
+                counter.animate().alphaBy(1f).setDuration(300);
                 activePlayer = 1;
                 mX.setImageResource(R.drawable.x);
                 mO.setImageResource(R.drawable.o_disabled);
             }else{
                 counter.setImageResource(R.drawable.x);
+                counter.animate().alphaBy(1f).setDuration(300);
                 activePlayer = 0;
                 mO.setImageResource(R.drawable.o);
                 mX.setImageResource(R.drawable.x_disabled);
             }
-            counter.animate().translationYBy(1000f).rotation(360).setDuration(600);
+//            counter.animate().translationYBy(1000f).setDuration(300);
 
             for (int[] winningPosition :winningPositions){
                 if(gameState[winningPosition[0]] == gameState[winningPosition[1]] && gameState[winningPosition[1]] == gameState[winningPosition[2]] && gameState[winningPosition[0]] != 2){
@@ -138,7 +150,7 @@ public class GamePage extends AppCompatActivity {
         GridLayout mGridLayout = findViewById(R.id.gridLayout);
 
         for(int i = 0; i < mGridLayout.getChildCount(); i++){
-            ((ImageView) mGridLayout.getChildAt(i)).setImageResource(0);
+            ((ImageView) mGridLayout.getChildAt(i)).setAlpha(0f);
         }
     }
 }
